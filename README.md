@@ -11,6 +11,4 @@ This library comes with absolutely no support, warranty etc. you name it.
 
 For more info, please see http://www.tagtraum.com/pcmsampledsp/
 
-Enjoy,
-
--hendrik
+Enjoy.
