@@ -1,0 +1,68 @@
+    ------
+    Introduction
+    ------
+    Hendrik Schreiber
+    ------
+    ------
+
+Introduction
+
+    <PCMSampledSP> is a free implementation of some <<<javax.sound.sampled.spi>>> interfaces.
+    Its main purpose is to re-sample PCM audio to different sampling rates using polyphase decomposition
+    and a multi-step approach. Additionally, it supports changing a signal's bit depth.
+
+* Getting Started
+
+    The easiest way to use PCMSampledSP (other than simply using the
+    {{{https://www.beatunes.com/repo/maven2/com/tagtraum/pcmsampledsp/${projectversion}/pcmsampledsp-${projectversion}.jar}jar}})
+    is to start a {{{http://maven.apache.org/}Maven}} project and introduce a PCMSampledSP dependency.
+
+    To do so, add something like this to the dependencies section of your pom:
+
+---
+<dependency>
+    <groupId>com.tagtraum</groupId>
+    <artifactId>pcmsampledsp</artifactId>
+    <version>${projectversion}</version>
+</dependency>
+---
+
+   If Maven can't resolve this dependency, you might also want to add the following
+   repository to the repositories section of your pom:
+
+---
+<repository>
+    <id>beatunes</id>
+    <name>beaTunes Repository</name>
+    <url>https://www.beatunes.com/repo/maven2</url>
+</repository>
+---
+
+    To use the library, simply use the <<<javax.sound.sampled>>> classes like you normally would.
+
+* Example
+
+    To re-sample a 44.1kHz wave file to 48kHz, you could write something like this:
+
+---
+final File file = new File("Some44100HzFile.wav");
+final AudioInputStream sourceStream = AudioSystem.getAudioInputStream(file);
+final AudioFormat sourceFormat = sourceStream.getFormat();
+final AudioFormat targetFormat = new AudioFormat(
+        sourceFormat.getEncoding(),
+        48000f, // target sample rate
+        sourceFormat.getSampleSizeInBits(),
+        sourceFormat.getChannels(),
+        sourceFormat.getFrameSize(),
+        48000f, // target frame rate
+        sourceFormat.isBigEndian()
+);
+final AudioInputStream resampledStream = AudioSystem.getAudioInputStream(targetFormat, sourceStream);
+// do something with the resampled audio data
+AudioSystem.write(resampledStream, AudioFileFormat.Type.WAVE, new File("Resampled48000HzFile.wav"));
+---
+
+
+* Requirements
+
+    PCMSampledSP is written in pure Java. It does not require any native libraries.

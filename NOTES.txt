@@ -1,0 +1,30 @@
+0.9.4
+
+Moved to JUnit 4.12.
+Changed pom to allow building from Java 8.
+Migrated to public repository at GitHub.
+
+
+0.9.3
+
+Moved to JUnit 4.11.
+Moved to Java 7.
+Fixed signed PCM 32-bit support.
+Added resampling support for floating point PCM.
+
+
+0.9.2
+
+Added support for 192k->44.1k conversion.
+
+
+0.9.1
+
+Added sample size converter.
+Fixed issue when upsampling by an integer.
+Fixed incorrect sample rate in AudioFormat.
+
+
+0.9.0
+
+First release

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="PCMSampledSP">
+
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.4</version>
+    </skin>
+    <custom>
+        <fluidoSkin>
+            <gitHub>
+                <projectId>hendriks73/pcmsampledsp</projectId>
+                <ribbonOrientation>left</ribbonOrientation>
+                <ribbonColor>gray</ribbonColor>
+            </gitHub>
+        </fluidoSkin>
+    </custom>
+    <version position="right"/>
+    <googleAnalyticsAccountId>UA-7561371-2</googleAnalyticsAccountId>
+    <bannerLeft>
+        <name>PCMSampledSP</name>
+        <href>http://www.tagtraum.com/pcmsampledsp</href>
+        <src>./images/pcmsampledsp-banner.png</src>
+        <width>473</width>
+        <height>120</height>
+    </bannerLeft>
+    <bannerRight>
+        <href>http://www.tagtraum.com/</href>
+        <src>./images/tagtraum-banner.png</src>
+        <width>90</width>
+        <height>60</height>
+    </bannerRight>
+
+    <body>
+        <links>
+            <item name="tagtraum" href="http://www.tagtraum.com/"/>
+            <item name="beaTunes" href="https://www.beatunes.com/"/>
+        </links>
+
+        <menu name="PCMSampledSP">
+            <item name="Introduction" href="index.html"/>
+            <item name="Release" href="https://www.beatunes.com/repo/maven2/com/tagtraum/pcmsampledsp/"/>
+            <item name="JavaDocs" href="apidocs/index.html"/>
+            <!--
+            <item name="Download" href="download.html"/>
+            <item name="Release Notes" href="release-notes.html" />
+            <item name="General Information" href="about.html"/>
+            <item name="For Maven 1.x Users" href="maven1.html"/>
+            <item name="Road Map" href="roadmap.html" />
+            -->
+        </menu>
+
+        <menu ref="reports"/>
+    </body>
+</project>

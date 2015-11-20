@@ -1,0 +1,3 @@
+com.tagtraum.pcmsampledsp.StereofyConversionProvider
+com.tagtraum.pcmsampledsp.ResampleConversionProvider
+com.tagtraum.pcmsampledsp.SampleSizeConversionProvider
