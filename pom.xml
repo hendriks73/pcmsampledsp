@@ -145,6 +145,10 @@
         <system>GitHub Issues</system>
         <url>https://github.com/hendriks73/pcmsampledsp/issues</url>
     </issueManagement>
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/hendriks73/pcmsampledsp</url>
+    </ciManagement>
     <properties>
         <!-- alias, because of http://maven.apache.org/plugins/maven-site-plugin/examples/creating-content.html#Filtering -->
         <projectversion>${project.version}</projectversion>
