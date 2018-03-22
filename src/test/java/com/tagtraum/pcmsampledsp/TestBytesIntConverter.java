@@ -76,7 +76,7 @@ public class TestBytesIntConverter {
     }
 
     @Test
-    public void testIntToByte() throws IOException {
+    public void testIntToByte() {
         final ByteBuffer byteBuffer = ByteBuffer.allocate(4);
         final int value = -128;
         BytesIntConverter.getInstance(1, true, true).encode(value, byteBuffer);
@@ -86,7 +86,7 @@ public class TestBytesIntConverter {
     }
 
     @Test
-    public void testIntTo24Bit() throws IOException {
+    public void testIntTo24Bit() {
         final ByteBuffer byteBuffer = ByteBuffer.allocate(4);
         BytesIntConverter.getInstance(3, true, true).encode(4210435, byteBuffer);
 
@@ -97,7 +97,7 @@ public class TestBytesIntConverter {
     }
 
     @Test
-    public void testIntTo16Bit() throws IOException {
+    public void testIntTo16Bit() {
         /*
         final byte[] bytes = {64, -128};
         final ByteBuffer bb = ByteBuffer.wrap(bytes);

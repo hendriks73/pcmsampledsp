@@ -99,6 +99,7 @@ public class Resampler {
     }
 
     public int resample(final int[] in, final int[] out, final int channel, final int channelCount) {
+        if (out == null || out.length == 0) return 0;
         final int upFactor = this.factor.getNumerator();
         final int downFactor = this.factor.getDenominator();
 
@@ -127,6 +128,7 @@ public class Resampler {
     }
 
     public int resample(final float[] in, final float[] out, final int channel, final int channelCount) {
+        if (out == null || out.length == 0) return 0;
         final int upFactor = this.factor.getNumerator();
         final int downFactor = this.factor.getDenominator();
 

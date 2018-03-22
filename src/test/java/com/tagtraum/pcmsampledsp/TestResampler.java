@@ -147,4 +147,11 @@ public class TestResampler {
         final Resampler stereoResampler = new Resampler(new Rational(upFactor, downFactor));
         stereoResampler.resample(stereo, new int[stereo.length / downFactor], 0, 2);
     }
+
+    @Test
+    public void testZeroOutput() {
+        final Resampler stereoResampler = new Resampler(new Rational(1, 2));
+        final int[] stereo = {0, 1000, 2000};
+        stereoResampler.resample(stereo, new int[0], 0, 2);
+    }
 }

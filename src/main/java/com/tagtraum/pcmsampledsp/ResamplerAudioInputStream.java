@@ -144,9 +144,9 @@ public class ResamplerAudioInputStream extends AudioInputStream {
     }
 
     /**
-     * Encapsulates access to the actual resampling code
+     * Encapsulates access to the actual resampling code.
      */
-    private static interface ResampleBufferMethod {
+    private interface ResampleBufferMethod {
 
         /**
          * Reads data from the stream, resamples it and fills the filteredBuffer with the result.

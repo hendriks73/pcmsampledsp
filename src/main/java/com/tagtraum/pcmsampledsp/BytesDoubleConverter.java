@@ -6,7 +6,6 @@
  */
 package com.tagtraum.pcmsampledsp;
 
-import java.io.IOException;
 import java.nio.ByteBuffer;
 
 /**
@@ -31,7 +30,7 @@ public class BytesDoubleConverter implements Converter<double[]> {
 
 
     @Override
-    public void decode(final ByteBuffer source, final double[] array) throws IOException {
+    public void decode(final ByteBuffer source, final double[] array) {
         for (int sampleNumber = 0; sampleNumber < array.length; sampleNumber++) {
             array[sampleNumber] = decode(source);
         }
@@ -57,7 +56,7 @@ public class BytesDoubleConverter implements Converter<double[]> {
      * @param value a double value
      * @param target byte buffer
      */
-    public void encode(final double value, final ByteBuffer target) {
+    private void encode(final double value, final ByteBuffer target) {
         final long v = Double.doubleToRawLongBits(value);
         if (bigEndian) {
             longBitsToByteBigEndian(v, target);
@@ -87,9 +86,8 @@ public class BytesDoubleConverter implements Converter<double[]> {
      *
      * @param source byte buffer
      * @return double
-     * @throws java.io.IOException if the conversion fails
      */
-    public double decode(final ByteBuffer source) throws IOException {
+    private double decode(final ByteBuffer source) {
         final long sample = bigEndian
                 ? byteToLongBitsBigEndian(source)
                 : byteToLongBitsLittleEndian(source);
@@ -105,7 +103,7 @@ public class BytesDoubleConverter implements Converter<double[]> {
         return sample;
     }
 
-    public long byteToLongBitsBigEndian(final ByteBuffer source) {
+    private long byteToLongBitsBigEndian(final ByteBuffer source) {
         long sample = 0;
         for (int byteIndex = 0; byteIndex < BYTES_PER_SAMPLE; byteIndex++) {
             final long aByte = source.get() & 0xff;

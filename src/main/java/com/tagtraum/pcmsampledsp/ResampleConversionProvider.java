@@ -192,7 +192,7 @@ public class ResampleConversionProvider extends FormatConversionProvider {
      * @throws IllegalArgumentException if the number contains a prime factor greater than 100
      */
     private static int[] primeFactors(final int number) throws IllegalArgumentException {
-        final ArrayList<Integer> list = new ArrayList<Integer>();
+        final ArrayList<Integer> list = new ArrayList<>();
         primeFactors(number, list);
         final int[] primeFactors = new int[list.size()];
         for (int i=0; i<primeFactors.length; i++) {

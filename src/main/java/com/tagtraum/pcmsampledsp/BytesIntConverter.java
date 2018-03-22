@@ -126,7 +126,7 @@ public abstract class BytesIntConverter implements Converter<int[]> {
 
     private static class BytesIntBE16BitSigned extends BytesIntConverter {
         @Override
-        public int decode(final ByteBuffer source) throws IOException {
+        public int decode(final ByteBuffer source) {
             final int byte1 = source.get() & 0xff;
             final int byte2 = source.get() & 0xff;
             return (short)((byte1 << 8) + byte2);
@@ -146,7 +146,7 @@ public abstract class BytesIntConverter implements Converter<int[]> {
 
     private static class BytesIntLE16BitSigned extends BytesIntConverter {
         @Override
-        public int decode(final ByteBuffer source) throws IOException {
+        public int decode(final ByteBuffer source) {
             final int byte1 = source.get() & 0xff;
             final int byte2 = source.get() & 0xff;
             return (short)((byte2 << 8) + byte1);
@@ -166,7 +166,7 @@ public abstract class BytesIntConverter implements Converter<int[]> {
 
     private static class BytesIntBE24BitSigned extends BytesIntConverter {
         @Override
-        public int decode(final ByteBuffer source) throws IOException {
+        public int decode(final ByteBuffer source) {
             final int byte1 = source.get() & 0xff;
             final int byte2 = source.get() & 0xff;
             final int byte3 = source.get() & 0xff;
@@ -189,7 +189,7 @@ public abstract class BytesIntConverter implements Converter<int[]> {
 
     private static class BytesIntLE24BitSigned extends BytesIntConverter {
         @Override
-        public int decode(final ByteBuffer source) throws IOException {
+        public int decode(final ByteBuffer source) {
             final int byte1 = source.get() & 0xff;
             final int byte2 = source.get() & 0xff;
             final int byte3 = source.get() & 0xff;

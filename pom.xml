@@ -81,7 +81,7 @@
                 <configuration>
                     <additionalparam>-Xdoclint:none</additionalparam>
                     <links>
-                        <link>http://docs.oracle.com/javase/8/docs/api/</link>
+                        <link>http://docs.oracle.com/javase/10/docs/api/</link>
                     </links>
                 </configuration>
                 <executions>
@@ -116,7 +116,7 @@
                 <configuration>
                     <additionalparam>-Xdoclint:none</additionalparam>
                     <links>
-                        <link>http://docs.oracle.com/javase/8/docs/api/</link>
+                        <link>http://docs.oracle.com/javase/10/docs/api/</link>
                     </links>
                 </configuration>
             </plugin>

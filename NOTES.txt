@@ -1,3 +1,9 @@
+0.9.5
+
+Minor code beautifications.
+Shortcut for zero-length resample output.
+
+
 0.9.4
 
 Moved to JUnit 4.12.

@@ -6,7 +6,6 @@
  */
 package com.tagtraum.pcmsampledsp;
 
-import java.io.IOException;
 import java.nio.ByteBuffer;
 
 /**
@@ -31,7 +30,7 @@ public class BytesFloatConverter implements Converter<float[]> {
 
 
     @Override
-    public void decode(final ByteBuffer source, final float[] array) throws IOException {
+    public void decode(final ByteBuffer source, final float[] array) {
         for (int sampleNumber = 0; sampleNumber < array.length; sampleNumber++) {
             array[sampleNumber] = decode(source);
         }
@@ -57,7 +56,7 @@ public class BytesFloatConverter implements Converter<float[]> {
      * @param value a float value
      * @param target byte buffer
      */
-    public void encode(final float value, final ByteBuffer target) {
+    private void encode(final float value, final ByteBuffer target) {
         final int v = Float.floatToRawIntBits(value);
         if (bigEndian) {
             intBitsToByteBigEndian(v, target);
@@ -87,9 +86,8 @@ public class BytesFloatConverter implements Converter<float[]> {
      *
      * @param source byte buffer
      * @return float
-     * @throws java.io.IOException if the conversion fails
      */
-    public float decode(final ByteBuffer source) throws IOException {
+    private float decode(final ByteBuffer source) {
         final int sample = bigEndian
                 ? byteToIntBitsBigEndian(source)
                 : byteToIntBitsLittleEndian(source);
@@ -105,7 +103,7 @@ public class BytesFloatConverter implements Converter<float[]> {
         return sample;
     }
 
-    public int byteToIntBitsBigEndian(final ByteBuffer source) {
+    private int byteToIntBitsBigEndian(final ByteBuffer source) {
         int sample = 0;
         for (int byteIndex = 0; byteIndex < BYTES_PER_SAMPLE; byteIndex++) {
             final int aByte = source.get() & 0xff;
